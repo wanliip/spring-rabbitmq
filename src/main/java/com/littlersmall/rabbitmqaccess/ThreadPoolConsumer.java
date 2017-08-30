@@ -9,12 +9,18 @@ import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 
 import org.omg.SendingContext.RunTime;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 /**
  * Created by littlersmall on 16/5/23.
  */
 @Slf4j
 public class ThreadPoolConsumer<T> {
+  
+  private static final Logger log = LoggerFactory
+      .getLogger(ThreadPoolConsumer.class);
+
     private ExecutorService executor;
     private volatile boolean stop = false;
     private final ThreadPoolConsumerBuilder<T> infoHolder;

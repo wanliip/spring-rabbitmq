@@ -4,6 +4,9 @@ import com.littlersmall.rabbitmqaccess.common.Constants;
 import com.littlersmall.rabbitmqaccess.common.DetailRes;
 import com.rabbitmq.client.*;
 import lombok.extern.slf4j.Slf4j;
+
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.amqp.core.Message;
 import org.springframework.amqp.rabbit.connection.Connection;
 import org.springframework.amqp.rabbit.connection.ConnectionFactory;
@@ -22,6 +25,10 @@ import java.util.concurrent.TimeoutException;
  */
 @Slf4j
 public class MQAccessBuilder {
+
+  private static final Logger log = LoggerFactory
+      .getLogger(MQAccessBuilder.class);
+
     private ConnectionFactory connectionFactory;
 
     public MQAccessBuilder(ConnectionFactory connectionFactory) {

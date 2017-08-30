@@ -12,6 +12,26 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @NoArgsConstructor
 public class DetailRes {
-    boolean isSuccess;
-    String errMsg;
+  
+    private boolean isSuccess;
+    private String errMsg;
+
+    public DetailRes(boolean b, String string) {
+      this.isSuccess=b;
+      this.errMsg=string;
+    }
+    public boolean isSuccess() {
+      return isSuccess;
+    }
+    public void setSuccess(boolean isSuccess) {
+      this.isSuccess = isSuccess;
+    }
+    public String getErrMsg() {
+      return errMsg;
+    }
+    public void setErrMsg(String errMsg) {
+      this.errMsg = errMsg;
+    }
+    
+    
 }
